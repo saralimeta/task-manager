@@ -30,9 +30,13 @@ class Database:
     def execute(self, query, values=None):
         try:
             self.cursor.execute(query, values)
-            self.conn.commit()
+            if not query.strip().lower().startswith("select"):
+                self.conn.commit()
+            return True
         except Error as e:
-            print(f"[EXEC ERROR] {e}")
+            print(f"[EXEC ERROR] {e}") 
+            return False
+
 
     def fetchall(self):
         return self.cursor.fetchall()
