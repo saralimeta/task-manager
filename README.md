@@ -36,7 +36,7 @@ A command-line Task Management system built with Python and MySQL to demonstrate
 pip install mysql-connector-python
 ```
 
-### 2. Install Python Dependencies
+### 2. Setting up DB
 
 Open your MYSQL terminal or GUI then copy and run the SQL script under schema.sql
 
