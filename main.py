@@ -3,10 +3,11 @@
 import argparse
 from db import Database
 from task_manager import TaskManager
+from config import DB_CONFIG
 
 
 def main():
-    db = Database(password="root")
+    db = Database(**DB_CONFIG)
     manager = TaskManager(db)
 
     parser = argparse.ArgumentParser(description="Task Manager CLI")
